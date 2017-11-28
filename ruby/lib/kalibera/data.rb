@@ -70,7 +70,7 @@ module Kalibera
   # lower: lower bound of 95% confidence interval
   # median: the median value of the data
   # upper: upper bound of 95% confidence interval
-  # 
+  #
   # Arguments:
   # means -- the list of means (need not be sorted).
   def self.confidence_slice(means, confidence="0.95")
@@ -191,7 +191,7 @@ module Kalibera
     memoize :mean
 
     # Biased estimator S_i^2.
-    # 
+    #
     # Arguments:
     # i -- the mathematical index of the level from which to compute S_i^2
     def Si2(i)
@@ -224,7 +224,7 @@ module Kalibera
     memoize :Si2
 
     # Compute the unbiased T_i^2 variance estimator.
-    # 
+    #
     # Arguments:
     # i -- the mathematical index from which to compute T_i^2.
     def Ti2(i)
@@ -305,7 +305,7 @@ module Kalibera
     # confidence -- The required confidence. Default is "0.95" (95%).
     def bootstrap_confidence_interval(iterations=10000, confidence="0.95")
       means = bootstrap_means(iterations)
-      confidence_slice(means, confidence)
+      Kalibera.confidence_slice(means, confidence)
     end
 
     def random_measurement_sample(index=[])
